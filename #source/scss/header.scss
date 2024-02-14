@@ -1,0 +1,133 @@
+header.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 11;
+    height: 110px;
+    display: flex;
+    align-items: center;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: right;
+
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 60px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            a {
+                font-size: 20px;
+                color: #fff;
+                display: inline-block;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    bottom: 0;
+                    width: 0;
+                    height: 2px;
+                    background: #fff;
+                    transition: 0.5s;
+                    bottom: -5px;
+                }
+
+                &:hover {
+                    &::after {
+                       width: 100%;
+                    }
+                }
+
+                img {
+                    width: 19px;
+                    vertical-align: middle;
+                    margin-left: 4px;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}
+
+.header__logo {
+    img {
+        max-width: 100%;
+    }
+}
+
+.closemenu {
+    display: none;
+}
+
+@media(max-width:1600.8px) {
+    header.header ul li a {
+        font-size: 18px;
+    }
+
+    header.header ul li {
+        margin-right: 45px;
+    }
+}
+
+@media(max-width:1199.8px) {
+    header.header ul li {
+        margin-right: 20px;
+    }
+
+}
+
+@media(max-width:991.8px) {
+    .mobmenu {
+        display: none;
+    }
+
+    header {
+        .container-fluid {
+            position: relative;
+        }
+    }
+
+    .closemenu {
+        display: inline-block;
+        position: absolute;
+        right: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: transparent;
+        outline: none;
+        padding: 0;
+        border: none;
+    }
+}
+
+@media(max-width:575.8px) {
+
+    .header__logo img {
+        max-width: 160px;
+    }
+
+    header.header {
+        height: 80px;
+    }
+
+    .closemenu {
+        right: 15px;
+    }
+
+    .herosection__botsect .scrolldown {
+        display: none;
+    }
+
+}

@@ -1,0 +1,166 @@
+@font-face {
+    font-family: 'neue';
+    src: url('../fonts/neue-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'neue-dbold';
+    src: url('../fonts/neue-demibold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'neue';
+    font-size: 16px;
+    color: #151515;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 112px;
+    font-weight: normal;
+    line-height: 100%;
+    color: #151515;
+}
+
+h2, h3 {
+    color: #151515;
+    font-size: 92px;
+    line-height: 110%;
+    font-weight: normal;
+}
+
+.greybtn {
+    min-height: 84px;
+    padding: 5px 50px;
+    display: inline-flex;
+    align-items: center;
+    background: #151515;
+    border: 1px solid #fff;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+
+    &:hover {
+        background: #fff;
+        color: #151515;
+        animation: pulse1 2s infinite;
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@media(max-width:1600.8px) {
+    h1 {
+        font-size: 80px;
+    }
+
+    .greybtn {
+        font-size: 21px;
+        min-height: 70px;
+    }
+
+    h2, h3 {
+        font-size: 60px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+@media(max-width:1199.8px) {
+    .container-fluid {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media(max-width:991.8px) {
+    h2, h3 {
+        font-size: 44px;
+    }
+}
+
+@media(max-width:767.8px) {
+    h1 {
+        font-size: 60px;
+    }
+
+    .greybtn {
+        padding: 5px 40px;
+    }
+
+}
+
+@media(max-width:575.8px) {
+    .container-fluid {
+        padding: 0 15px;
+    }
+
+    .greybtn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h2, h3 {
+        font-size: 36px;
+    }
+}
