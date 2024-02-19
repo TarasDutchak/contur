@@ -39,48 +39,51 @@ $(document).ready(function () {
     });
 
     // tabs
-    const tabs = document.querySelectorAll('.tabheader__item'),
-        tabsContent = document.querySelectorAll('.tabcontent'),
-        tabsParent = document.querySelector('.tabheader__items');
+    if ($('.tabcontent').length > 1) {
+        const tabs = document.querySelectorAll('.tabheader__item'),
+            tabsContent = document.querySelectorAll('.tabcontent'),
+            tabsParent = document.querySelector('.tabheader__items');
 
 
 
 
-    function hideTabContent() {
-        tabsContent.forEach(item => {
-            item.classList.add('hide');
-            item.classList.remove('show', 'fade');
-        });
-        tabs.forEach(item => {
-            item.classList.remove('tabheader__item_active');
-        });
-    }
-
-
-    function showTabContent(i = 0) {
-        tabsContent[i].classList.add('show', 'fade');
-        tabsContent[i].classList.remove('hide');
-        tabs[i].classList.add('tabheader__item_active');
-    }
-
-
-    hideTabContent();
-    showTabContent();
-
-
-    tabsParent.addEventListener('click', (event) => {
-        const target = event.target;
-
-
-        if (target && target.classList.contains('tabheader__item')) {
-            tabs.forEach((item, i) => {
-                if (target == item) {
-                    hideTabContent();
-                    showTabContent(i);
-                }
+        function hideTabContent() {
+            tabsContent.forEach(item => {
+                item.classList.add('hide');
+                item.classList.remove('show', 'fade');
+            });
+            tabs.forEach(item => {
+                item.classList.remove('tabheader__item_active');
             });
         }
-    });
+
+
+        function showTabContent(i = 0) {
+            tabsContent[i].classList.add('show', 'fade');
+            tabsContent[i].classList.remove('hide');
+            tabs[i].classList.add('tabheader__item_active');
+        }
+
+
+        hideTabContent();
+        showTabContent();
+
+
+        tabsParent.addEventListener('click', (event) => {
+            const target = event.target;
+
+
+            if (target && target.classList.contains('tabheader__item')) {
+                tabs.forEach((item, i) => {
+                    if (target == item) {
+                        hideTabContent();
+                        showTabContent(i);
+                    }
+                });
+            }
+        });
+    }
+
 
 
     // scroll to
@@ -92,16 +95,41 @@ $(document).ready(function () {
         return false;
     });
 
+    // Portfolio
+
+    $('.projectbox').click(function(){
+        $('.projectbox').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    // Отримати всі елементи з класом "projectbox"
+    var projectBoxes = document.querySelectorAll('.projectbox');
+
+    // Перебрати кожен елемент та додати обробник подій для кліків
+    projectBoxes.forEach(function (box) {
+        box.addEventListener('click', function () {
+            // Отримати значення атрибуту data-img з елемента
+            var imgUrl = box.getAttribute('data-img');
+
+            // Знайти відповідний тег <img> і змінити значення його атрибуту src
+            var imgElement = document.querySelector('.showpic');
+            imgElement.setAttribute('src', imgUrl);
+        });
+    });
 
 
 
+    // Header menu
+    $('.closemenu').click(function(){
+        $('.mobmenu').addClass('show');
+    });
+    $('.closemenubtn').click(function(){
+        $('.mobmenu').removeClass('show');
+    });
 
 
 
-
-
-
-
+    
 
 
 
